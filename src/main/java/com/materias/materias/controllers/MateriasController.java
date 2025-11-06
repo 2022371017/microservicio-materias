@@ -12,4 +12,24 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/materias")
 public class MateriasController {
+    @Autowired
+    private MateriasService materiasService;
+    
+    // Historia de usuario Listar Materias - Adonai Lorenzo Nuñez
+    @GetMapping("/listar-materias")
+    public ResponseEntity<List<MateriasListDto>> listarMaterias() {
+        List<MateriasListDto> materias = materiasService.listarMaterias();
+        return ResponseEntity.ok(materias);
+    }
+
+    // Historia de usuario Editar Materias - Erwin Javier Martinez Morales
+    @PutMapping("/editar-materias/{id}")
+    public ResponseEntity<Materias> editarMateria(@PathVariable Long id, @RequestBody MateriasEditDto materiaDto) {
+        try {
+            Materias materiaActualizada = materiasService.editarMateria(id, materiaDto);
+            return ResponseEntity.ok(materiaActualizada);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
