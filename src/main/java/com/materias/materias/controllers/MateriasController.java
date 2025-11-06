@@ -12,4 +12,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/materias")
 public class MateriasController {
+
+
+     //historia de usuario eliminar- Juan Antonio Garcia Perez
+     @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteMateria(@PathVariable Long id) {
+        return materiaService.deleteMateria(id)
+                ? ResponseEntity.noContent().build()
+                : ResponseEntity.notFound().build();
+    }
 }
