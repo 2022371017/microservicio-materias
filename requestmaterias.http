@@ -1,0 +1,27 @@
+### Petición para ver las materias
+GET http://localhost:8101/api/materias/listar-materias HTTP/1.1
+
+### Petición para agregar materia
+POST http://localhost:8101/api/materias/agregar-materia HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "clave": "DWI",
+    "nombre": "Desarrollo Web Integral",
+    "descripcion": "Materia de desarrollo web con spring boot y react"
+}
+
+### Petición para editar materia
+PUT http://localhost:8101/api/materias/editar-materias/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "clave": "EXCBD",
+    "nombre": "Extracción de Conocimiento de Bases de Datos",
+    "descripcion": "Materia de bases de datos"
+}
+
+### Petición para eliminar materia
+DELETE http://localhost:8101/api/materias/eliminar-materia/3 HTTP/1.1
