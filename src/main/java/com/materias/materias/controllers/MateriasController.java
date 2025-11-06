@@ -45,7 +45,7 @@ public class MateriasController {
   
     // Historia de usuario Eliminar Materia - Juan Antonio Garcia Perez
     @DeleteMapping("/eliminar-materia/{id}")
-    public ResponseEntity<Void> deleteMateria(@PathVariable Long id) {
-        return materiasService.deleteMateria(id)
+    public boolean deleteMateria(@PathVariable Long id) {
+        return materiasService.deleteMateria(id);
       }
 }
