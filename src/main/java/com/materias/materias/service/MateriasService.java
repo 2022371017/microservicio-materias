@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 public class MateriasService {
     @Autowired
     private MateriasRepository materiasRepository;
-
     // Historia de usuario Listar Materias - Adonai Lorenzo Nuñez
     public List<MateriasListDto> listarMaterias() {
         return materiasRepository.findAll()
@@ -66,9 +65,6 @@ public class MateriasService {
                     // Cambiar activo al valor contrario
                     materia.setActivo(!materia.getActivo());
                     materiasRepository.save(materia);
-                    return true;
-                })
-                .orElse(false);
     }
 }
 

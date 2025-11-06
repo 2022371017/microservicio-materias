@@ -42,12 +42,10 @@ public class MateriasController {
             return ResponseEntity.notFound().build();
         }
     }
-
+  
     // Historia de usuario Eliminar Materia - Juan Antonio Garcia Perez
     @DeleteMapping("/eliminar-materia/{id}")
     public ResponseEntity<Void> deleteMateria(@PathVariable Long id) {
         return materiasService.deleteMateria(id)
-                ? ResponseEntity.noContent().build()
-                : ResponseEntity.notFound().build();
-    }
+      }
 }
